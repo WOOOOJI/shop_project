@@ -17,6 +17,17 @@ class ProjectApplicationTests {
 
 		int apple = 55555;
 		String hi = "안녕하세요!";
+		
+		
+		
+		
+		
+		
+		
+		int b = 0;
 	}
 
 }
+
+
+		
