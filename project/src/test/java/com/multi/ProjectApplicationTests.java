@@ -12,6 +12,7 @@ class ProjectApplicationTests {
 	
 	@Test
 	void contextLoads() {
+		int apple = 55555;
 	}
 
 }
