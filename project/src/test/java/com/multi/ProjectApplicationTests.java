@@ -16,15 +16,20 @@ class ProjectApplicationTests {
 		int a = 201;
 
 		int apple = 55555;
+
+		
+		
+		
+		
+		
+		
+		
+		int banana = 88888;
+
 		String hi = "안녕하세요!";
-		
-		
-		
-		
-		
-		
-		
+
 		int b = 0;
+
 	}
 
 }
