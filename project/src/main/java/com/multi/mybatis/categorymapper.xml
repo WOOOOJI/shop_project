@@ -21,4 +21,11 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<insert id="insert2" parameterType="Category">
 		INSERT INTO category VALUES(#{c_num},null,#{c_name})
 	</insert>
+	<select id="getUserCat" parameterType="String" resultType="Category">
+		SELECT o.id AS user_id, p.p_name AS p_name, c.c_name AS c_name  FROM orderr o
+		INNER JOIN orderr_detail od ON od.order_num = o.order_num
+		INNER JOIN product p ON od.p_num = p.p_num
+		INNER JOIN category c ON c.c_num = p.c_num
+		WHERE o.id LIKE #{user_id};
+	</select>
 </mapper>

@@ -43,5 +43,9 @@ public class CategoryService implements MyService<Integer, Category>{
 	public void register2(Category v) throws Exception{
 		mapper.insert2(v);
 	}
+	
+	public List<Category> getUserCat(String k) throws Exception{
+		return mapper.getUserCat(k);
+	}
 
 }
