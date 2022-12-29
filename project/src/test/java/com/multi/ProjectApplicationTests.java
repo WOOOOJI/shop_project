@@ -9,6 +9,14 @@ class ProjectApplicationTests {
 	@Test
 	void contextLoads() {
 		int apple = 55555;
+		
+		
+		
+		
+		
+		
+		
+		int banana = 88888;
 	}
 
 }
