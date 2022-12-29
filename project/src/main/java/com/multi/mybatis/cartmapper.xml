@@ -35,4 +35,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		INNER JOIN user u ON u.id = c.id
 		WHERE u.id LIKE #{user_id};
 	</select>
+	<select id="getProductSum" parameterType="String" resultType="Cart">
+		SELECT u.name AS user_name, p.p_name AS p_name, ca.cnt AS cnt , sum(p_price*ca.cnt) AS total FROM cart ca 
+		JOIN user u ON u.id=ca.id
+		JOIN product p ON p.p_num=ca.p_num
+		WHERE ca.id LIKE #{user_id} GROUP BY ca.cart_num;
+	</select>
 </mapper>

@@ -23,6 +23,10 @@ public class Cart {
 	private String p_price;
 	private String user_id;
 	
+	//getProductSum Variable
+	private String user_name;
+	//p_name, cnt는 이미 존재
+	private int total;
 	
 	// CRUD Constructor
 	public Cart(String id, int p_num, int cnt) {

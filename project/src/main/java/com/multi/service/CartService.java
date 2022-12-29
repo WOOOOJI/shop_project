@@ -40,9 +40,13 @@ public class CartService implements MyService<Integer, Cart>{
 		return mapper.selectall();
 	}
 	
-	//-- abc1234회원이 장바구니에 넣은 상품의 장바구니 번호, 상품명, 상품 가격, 총수량을 선택해주는 메소드
+	//회원이 장바구니에 넣은 상품의 장바구니 번호, 상품명, 상품 가격, 총수량을 선택해주는 메소드
 	public List<Cart> getCart(String k) throws Exception{
 		return mapper.getCart(k);
 	}
-
+	
+	// 회원이 카트에 담은 물품의 물품별 총액 구하기 (회원이름, 상품명, 상품개수, 총액)
+	public List<Cart> getProductSum(String k) throws Exception{
+		return mapper.getProductSum(k);
+	}
 }
