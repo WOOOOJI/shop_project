@@ -19,4 +19,11 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		DELETE FROM orderr WHERE order_num=#{order_num}
 	</delete>
 	
+	<select id="getOrderr" resultType="Orderr">
+		SELECT o.id AS "id", u.name AS "name", o.method_payment AS "method_payment", o.rdate AS "rdate", o.detailaddr AS "detailaddr"
+		FROM orderr o
+		INNER JOIN user u ON o.id = u.id
+		WHERE o.id LIKE #{user_id};
+	</select>
+	
 </mapper>

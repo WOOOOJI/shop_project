@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.multi.dto.Cart;
 import com.multi.dto.Orderr;
 import com.multi.frame.MyService;
 import com.multi.mapper.OrderrMapper;
@@ -41,6 +42,11 @@ public class OrderrService implements MyService<Integer, Orderr>{
 	@Override
 	public List<Orderr> get() throws Exception {
 		return mapper.selectall();
+	}
+	
+	//주문테이블에 id, 사용자이름, 결제수단, 주문날짜, 배송지주소를 선택하는 메소드
+	public List<Orderr> getOrderr(String k) throws Exception{
+		return mapper.getOrderr(k);
 	}
 
 }
