@@ -42,5 +42,10 @@ public class Order_DetailService implements MyService<Integer, Order_Detail>{
 	public List<Order_Detail> get() throws Exception {
 		return mapper.selectall();
 	}
-
+	
+	//주문상세조회 메소드
+	public List<Order_Detail> selectdetail(String k) throws Exception{
+		return mapper.selectdetail(k);
+	}
+	
 }

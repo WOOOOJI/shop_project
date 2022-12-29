@@ -19,4 +19,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		DELETE FROM orderr_detail WHERE od_num=#{od_num}
 	</delete>
 	
+	<select id="selectdetail" parameterType="String" resultType="Order_Detail">
+		SELECT  od.order_num AS "order_num", od.p_num AS "p_num", p.p_name AS "p_name", od.cnt AS "cnt", (p.p_price*od.cnt) AS "total_price"
+		FROM orderr_detail od
+		INNER JOIN orderr o ON o.order_num = od.order_num
+		INNER JOIN product p ON p.p_num = od.p_num
+		INNER JOIN user u ON u.id = o.id
+		where o.id LIKE #{order_id}
+	</select>
+	
 </mapper>
