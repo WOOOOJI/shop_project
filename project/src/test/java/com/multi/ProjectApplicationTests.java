@@ -13,7 +13,7 @@ class ProjectApplicationTests {
 	@Test
 	void contextLoads() {
 
-		int a = 303;
+		int a = 201;
 
 		int apple = 55555;
 		String hi = "안녕하세요!";
