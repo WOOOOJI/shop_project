@@ -39,5 +39,10 @@ public class CartService implements MyService<Integer, Cart>{
 	public List<Cart> get() throws Exception {
 		return mapper.selectall();
 	}
+	
+	//-- abc1234회원이 장바구니에 넣은 상품의 장바구니 번호, 상품명, 상품 가격, 총수량을 선택해주는 메소드
+	public List<Cart> getCart(String k) throws Exception{
+		return mapper.getCart(k);
+	}
 
 }

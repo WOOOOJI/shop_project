@@ -3,23 +3,36 @@
 PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.multi.mapper.CartMapper">
-	
+
 	<insert id="insert" parameterType="Cart">
-		INSERT INTO cart(id, p_num, cnt) VALUES (#{id}, #{p_num}, #{cnt})
+		INSERT INTO cart(id, p_num,
+		cnt) VALUES (#{id}, #{p_num}, #{cnt})
 	</insert>
 	<delete id="delete" parameterType="Integer">
-		DELETE FROM cart WHERE cart_num=#{cart_num}
+		DELETE FROM cart WHERE
+		cart_num=#{cart_num}
 	</delete>
-	
+
 	<update id="update" parameterType="Cart">
-		UPDATE cart SET cnt=#{cnt} WHERE id=#{id} and p_num=#{p_num}
+		UPDATE cart SET cnt=#{cnt}
+		WHERE id=#{id} and p_num=#{p_num}
 	</update>
-	
+
 	<select id="select" parameterType="Integer" resultType="Cart">
-		SELECT id, p_num, cnt FROM cart WHERE cart_num = #{cart_num};
+		SELECT
+		id, p_num, cnt FROM cart WHERE cart_num = #{cart_num};
 	</select>
-	
+
 	<select id="selectall" resultType="Cart">
 		SELECT * FROM cart
+	</select>
+
+	<select id="getCart" resultType="Cart">
+		SELECT c.cart_num AS "cart_num",
+		p.p_name AS "p_name", p.p_price AS "p_price", c.cnt AS "cnt" 
+		FROM product p
+		INNER JOIN cart c ON c.p_num = p.p_num
+		INNER JOIN user u ON u.id = c.id
+		WHERE u.id LIKE #{user_id};
 	</select>
 </mapper>
