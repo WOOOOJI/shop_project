@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.multi.mapper.Order_DetailMapper">	
+	<select id="select" parameterType="Integer" resultType="Order_Detail">
+		SELECT * FROM orderr_detail WHERE od_num=#{od_num}
+	</select>
+	<select id="selectall" resultType="Order_Detail">
+		SELECT * FROM orderr_detail
+	</select>
+	<insert id="insert" parameterType="Order_Detail">
+		INSERT INTO orderr_detail VALUES (#{od_num}, #{order_num},#{p_num},#{cnt})
+	</insert>
+	<update id="update" parameterType="Order_Detail">
+		UPDATE orderr_detail SET cnt=#{cnt} WHERE od_num=#{od_num}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM orderr_detail WHERE od_num=#{od_num}
+	</delete>
+	
+</mapper>
